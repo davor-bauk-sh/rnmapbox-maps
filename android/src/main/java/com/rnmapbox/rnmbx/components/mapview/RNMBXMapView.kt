@@ -912,19 +912,19 @@ open class RNMBXMapView(private val mContext: Context, var mManager: RNMBXMapVie
         return mContext.resources.displayMetrics.density.toDouble()
     }
 
-    /** Converts a point from density-independent pixels to physical pixels. */
+    /** Converts a point from physical pixels to density-independent pixels. */
     private fun toDp(pointPx: ScreenCoordinate): ScreenCoordinate {
         val density = getDisplayDensity()
         return ScreenCoordinate(pointPx.x / density, pointPx.y / density)
     }
 
-    /** Converts a point from physical pixels to density-independent pixels. */
+    /** Converts a point from density-independent pixels to physical pixels. */
     private fun toPx(pointDp: ScreenCoordinate): ScreenCoordinate {
         val density = getDisplayDensity()
         return ScreenCoordinate(pointDp.x * density, pointDp.y * density)
     }
 
-    /** Converts a bounding box from physical pixels to density-independent pixels. */
+    /** Converts a bounding box from density-independent pixels to physical pixels. */
     private fun toPx(boxDp: ScreenBox): ScreenBox {
         val density = getDisplayDensity()
         return ScreenBox(
